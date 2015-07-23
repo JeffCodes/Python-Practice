@@ -5,6 +5,8 @@ Created on Tue Jul 07 11:27:05 2015
 @author: BergemJE
 """
 
+
+#Pandas
 my_list = range(16)
 print filter(lambda x: x % 3 == 0, my_list)
 
@@ -93,7 +95,63 @@ animals.sort(['leg_num', 'sub_animal'], ascending = [False, True])
 
 
 
+moods = pd.read_excel('G:\Python\practicemerge.xlsx')
+a1 = animals[0:8]
+a2 = animals[8:]
+combinethis = [a1, a2]
+#These four lines do the same thing, append to data frames
+animals2 = pd.concat([a1, a2], axis = 0)
+animals2 = pd.concat(combinethis)
+animals2 = pd.concat([a1, a2], axis = 0, ignore_index=True)
+animals2 = a1.append(a2)
 
+
+#tkinter
+import Tkinter as Tk
+#from Tkinter import *  #This would make it so you don't have to start a bunch of stuff with Tk.
+
+root = Tk.Tk()
+
+w = Tk.Label(root, text="Hello, world!")
+w.pack()
+
+root.mainloop()
+
+###
+"""
+class App:
+
+    def __init__(self, master):
+
+        frame = Tk.Frame(master)
+        frame.pack()
+
+        self.button = Tk.Button(
+            frame, text="QUIT", fg="red", command=frame.quit
+            )
+        self.button.pack(side=Tk.LEFT)
+
+        self.hi_there = Tk.Button(frame, text="Hello", command=self.say_hi)
+        self.hi_there.pack(side=Tk.LEFT)
+
+    def say_hi(self):
+        print "hi there, everyone!"
+"""
+
+
+
+root = Tk.Tk()
+
+app = App(root)
+
+root.mainloop()
+root.destroy()
+
+
+
+a = raw_input('Choose a number: ')
+a
+print a
 
 
 
