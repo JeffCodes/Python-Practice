@@ -105,6 +105,13 @@ animals2 = pd.concat(combinethis)
 animals2 = pd.concat([a1, a2], axis = 0, ignore_index=True)
 animals2 = a1.append(a2)
 
+#Merging
+animalmoods = pd.merge(animals, moods, how='outer', on='animal' )
+
+
+#
+byanimal = animals.groupby('animal')
+byanimal['price'].describe()
 
 #tkinter
 import Tkinter as Tk
